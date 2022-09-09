@@ -1,52 +1,18 @@
-# Extension Project Template
+# Plant Generator
 
-This project was automatically generated.
+This extension lets you generate plants procedurally. There are a load of settings to change, so have fun :)!
 
-- `app` - It is a folder link to the location of your *Omniverse Kit* based app.
-- `exts` - It is a folder where you can add new extensions. It was automatically added to extension search path. (Extension Manager -> Gear Icon -> Extension Search Path).
+How to use:
+1. (optional) Edit settings to change the shape of the plant
+2. (optional) Change the "Plant Group" field. This will put generated plants under this folder
+3. Click the "Draw Plant" button
+4. Click around in the scene to place plants on meshes (note - does not work on ground plane objects because mesh raycast doesn't hit those)
+5. Esc stops plant draw mode
 
-Open this folder using Visual Studio Code. It will suggest you to install few extensions that will make python experience better.
+If you mess up a settings, settings can be reset to defaults with the "Reset" buttons
 
-Look for "drillgon.scene.lsystemplants" extension in extension manager and enable it. Try applying changes to any python files, it will hot-reload and you can observe results immediately.
-
-Alternatively, you can launch your app from console with this folder added to search path and your extension enabled, e.g.:
-
-```
-> app\omni.code.bat --ext-folder exts --enable company.hello.world
-```
-
-# App Link Setup
-
-If `app` folder link doesn't exist or broken it can be created again. For better developer experience it is recommended to create a folder link named `app` to the *Omniverse Kit* app installed from *Omniverse Launcher*. Convenience script to use is included.
-
-Run:
-
-```
-> link_app.bat
-```
-
-If successful you should see `app` folder link in the root of this repo.
-
-If multiple Omniverse apps is installed script will select recommended one. Or you can explicitly pass an app:
-
-```
-> link_app.bat --app create
-```
-
-You can also just pass a path to create link to:
-
-```
-> link_app.bat --path "C:/Users/bob/AppData/Local/ov/pkg/create-2021.3.4"
-```
+Plant settings can be changed in real time.
+Simply select your plants (or a parent of plants) and edit the settings. Plants will automatically update.
 
 
-# Sharing Your Extensions
-
-This folder is ready to be pushed to any git repository. Once pushed direct link to a git repository can be added to *Omniverse Kit* extension search paths.
-
-Link might look like this: `git://github.com/[user]/[your_repo].git?branch=main&dir=exts`
-
-Notice `exts` is repo subfolder with extensions. More information can be found in "Git URL as Extension Search Paths" section of developers manual.
-
-To add a link to your *Omniverse Kit* based app go into: Extension Manager -> Gear Icon -> Extension Search Path
-
+Note - the performance is poor as of version 1.0.0. This is because it's written in python and I had no time to optimize it.
